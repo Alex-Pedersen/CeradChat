@@ -18,7 +18,8 @@ namespace SimpleChat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            new Splash.SplashForm().Splash();
+            SplashForm form = new SplashForm();
+           
             Application.Run(new Lobby());
             
         }
