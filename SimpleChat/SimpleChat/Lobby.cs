@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SimpleChat
 {
-    public partial class Main : Form
+    public partial class Lobby : Form
     {
-        public Main()
+        public Lobby()
         {
             InitializeComponent();
         }

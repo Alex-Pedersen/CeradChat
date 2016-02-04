@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs">
+    <Compile Include="Lobby.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="Lobby.Designer.cs">
+      <DependentUpon>Lobby.cs</DependentUpon>
     </Compile>
     <Compile Include="privateChat.cs">
       <SubType>Form</SubType>
@@ -66,8 +66,8 @@
     <Compile Include="publicChat.Designer.cs">
       <DependentUpon>publicChat.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="Lobby.resx">
+      <DependentUpon>Lobby.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="privateChat.resx">
       <DependentUpon>privateChat.cs</DependentUpon>
@@ -96,6 +96,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Desktop\Splash\Splash\Splash.csproj">
+      <Project>{be89a2d7-71d2-4cd1-b479-c4f6c523568d}</Project>
+      <Name>Splash</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleServer\SimpleServer.csproj">
+      <Project>{84cf7a9c-a8ec-4a71-966b-9693cad5aa49}</Project>
+      <Name>SimpleServer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

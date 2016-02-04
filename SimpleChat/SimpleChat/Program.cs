@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Splash;
+
 
 namespace SimpleChat
 {
@@ -16,8 +18,9 @@ namespace SimpleChat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
-            publicChat chat = new publicChat();
+            new Splash.SplashForm().Splash();
+            Application.Run(new Lobby());
+            
         }
     }
 }
