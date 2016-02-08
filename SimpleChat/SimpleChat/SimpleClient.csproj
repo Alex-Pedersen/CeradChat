@@ -7,8 +7,8 @@
     <ProjectGuid>{6BC0AC6A-5AEB-4380-96A0-A86249723B6A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleChat</RootNamespace>
-    <AssemblyName>SimpleChat</AssemblyName>
+    <RootNamespace>SimpleClient</RootNamespace>
+    <AssemblyName>SimpleClient</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,30 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lobby.cs">
+    <Compile Include="ChatForms\Lobby.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lobby.Designer.cs">
+    <Compile Include="ChatForms\Lobby.Designer.cs">
       <DependentUpon>Lobby.cs</DependentUpon>
     </Compile>
-    <Compile Include="privateChat.cs">
+    <Compile Include="ChatForms\privateChat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="privateChat.Designer.cs">
+    <Compile Include="ChatForms\privateChat.Designer.cs">
       <DependentUpon>privateChat.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="publicChat.cs">
+    <Compile Include="ChatForms\publicChat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="publicChat.Designer.cs">
+    <Compile Include="ChatForms\publicChat.Designer.cs">
       <DependentUpon>publicChat.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Lobby.resx">
+    <Compile Include="SplashForm\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForm\SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChatForms\Lobby.resx">
       <DependentUpon>Lobby.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="privateChat.resx">
+    <EmbeddedResource Include="ChatForms\privateChat.resx">
       <DependentUpon>privateChat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -80,9 +86,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="publicChat.resx">
+    <EmbeddedResource Include="ChatForms\publicChat.resx">
       <DependentUpon>publicChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -98,14 +108,34 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Desktop\Splash\Splash\Splash.csproj">
-      <Project>{be89a2d7-71d2-4cd1-b479-c4f6c523568d}</Project>
-      <Name>Splash</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SimpleServer\SimpleServer.csproj">
       <Project>{84cf7a9c-a8ec-4a71-966b-9693cad5aa49}</Project>
       <Name>SimpleServer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cubo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\33.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\36.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\42.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\145463170326841.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
