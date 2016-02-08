@@ -13,20 +13,11 @@ namespace SimpleClient
         public SplashForm()
         {
             InitializeComponent();
-            _tmr = new Timer { Interval = 3000 }; //Sets timer interval
+            _tmr = new Timer {Interval = 3000}; //Sets timer interval
             _tmr.Start(); //Starts the timer
             _tmr.Tick += tmr_Tick; //Ticks the timer
-            if (_tmr.Interval == 3000)
-            {
-                checker = true;
-            }
-            this.Show();
 
-        }
-
-        private void SplashForm_Shown(object sender, EventArgs e)
-        {
-            
+            Show();
         }
 
         private void tmr_Tick(object sender, EventArgs e)
@@ -37,16 +28,10 @@ namespace SimpleClient
             lobby.Show();
         }
 
-        public bool Checker(SplashForm form)
-        {
-            bool running = _tmr.Interval != 3000;
-            return running;
-        }
 
         private void SplashForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
     }
 }
