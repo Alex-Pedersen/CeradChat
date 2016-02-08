@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace SimpleChat
+namespace SimpleClient.ChatForms
 {
     public partial class privateChat : Form
     {

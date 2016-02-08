@@ -1,4 +1,4 @@
-﻿namespace SimpleChat
+﻿namespace SimpleClient.ChatForms
 {
     partial class Lobby
     {
@@ -97,7 +97,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lobby";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chat Client";
+            this.Text = "Chat Lobby";
             this.ResumeLayout(false);
             this.PerformLayout();
 

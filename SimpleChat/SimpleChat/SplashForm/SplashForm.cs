@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-using SimpleChat;
+using SimpleClient.ChatForms;
+using SimpleServer;
 using Timer = System.Windows.Forms.Timer;
 
-namespace SimpleClient
+namespace SimpleClient.SplashForm
 {
     public partial class SplashForm : Form
     {
-        public Timer _tmr;
-        public bool checker = false;
+        private readonly Timer _tmr;
 
         public SplashForm()
         {
@@ -16,8 +16,7 @@ namespace SimpleClient
             _tmr = new Timer {Interval = 3000}; //Sets timer interval
             _tmr.Start(); //Starts the timer
             _tmr.Tick += tmr_Tick; //Ticks the timer
-
-            Show();
+            Show(); //Shows the form
         }
 
         private void tmr_Tick(object sender, EventArgs e)
@@ -25,7 +24,13 @@ namespace SimpleClient
             _tmr.Stop(); //after 3 sec stop the timer
             Hide(); //Hides displayform
             Lobby lobby = new Lobby();
+            privateChat chatprivate = new privateChat();
+            PublicChat chatpublic = new PublicChat();
+            serverChat serverChat = new serverChat();
             lobby.Show();
+            chatprivate.Show();
+            chatpublic.Show();
+            serverChat.Show();
         }
 
 

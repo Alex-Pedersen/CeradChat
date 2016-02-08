@@ -1,12 +1,19 @@
 ﻿using System.Windows.Forms;
 
-namespace SimpleChat
+namespace SimpleClient.ChatForms
 {
-    public partial class publicChat : Form
+    public partial class PublicChat : Form
     {
-        public publicChat()
+        public PublicChat()
         {
             InitializeComponent();
+        }
+
+        private void publicChat_Load(object sender, System.EventArgs e)
+        {
+
+
+
         }
     }
 }

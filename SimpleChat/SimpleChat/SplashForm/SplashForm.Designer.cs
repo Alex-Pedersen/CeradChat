@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SimpleClient
+﻿namespace SimpleClient.SplashForm
 {
     partial class SplashForm
     {
@@ -23,18 +21,16 @@ namespace SimpleClient
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (27)))), ((int) (((byte) (27)))),
-                ((int) 27));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.label1.Location = new System.Drawing.Point(166, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 57);
@@ -67,10 +63,8 @@ namespace SimpleClient
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Italic,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (27)))), ((int) (((byte) (27)))),
-                ((int) (((byte) (27)))));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.label3.Location = new System.Drawing.Point(168, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 40);
@@ -80,10 +74,8 @@ namespace SimpleClient
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (27)))), ((int) (((byte) (27)))),
-                ((int) (((byte) (27)))));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.label2.Location = new System.Drawing.Point(234, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 25);
@@ -94,8 +86,7 @@ namespace SimpleClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (229)))), ((int) (((byte) (229)))),
-                ((int) (((byte) (229)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.BackgroundImage = global::SimpleClient.Properties.Resources.Splash;
             this.ClientSize = new System.Drawing.Size(413, 253);
             this.Controls.Add(this.label2);
@@ -104,8 +95,7 @@ namespace SimpleClient
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SplashForm";
             this.ShowIcon = false;
@@ -114,11 +104,11 @@ namespace SimpleClient
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Transparent;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SplashForm_FormClosed);
-
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
 

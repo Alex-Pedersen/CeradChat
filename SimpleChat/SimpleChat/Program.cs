@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Splash
+namespace SimpleClient
 {
     internal static class Program
     {
@@ -13,7 +13,7 @@ namespace Splash
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SimpleClient.SplashForm());
+            Application.Run(new SplashForm.SplashForm());
         }
     }
 }
