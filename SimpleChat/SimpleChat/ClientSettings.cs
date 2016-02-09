@@ -56,12 +56,41 @@ namespace SimpleClient
             connected = true;
             Connected(this, EventArgs.Empty);
             var buffer = new byte[_socket.ReceiveBufferSize];
-            _socket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, ReadCallBack, buffer);
+            _socket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, ReadCallback, buffer);
         }
 
-        private void ReadCallBack(IAsyncResult ar)
+        private void ReadCallback(IAsyncResult ar)
         {
-            throw new NotImplementedException();
+            var buffer = (byte[])ar.AsyncState;
+            var rec = _socket.EndReceive(ar);
+            if (rec != 0)
+            {
+                var data = Encoding.ASCII.GetString(buffer, 0, rec);
+                Received(this, data);
+            }
+            else
+            {
+                Disconnected(this);
+                connected = false;
+                Close();
+                return;
+            }
+            _socket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, ReadCallback, buffer);
+        }
+
+        public void Send(string data)
+        {
+            try
+            {
+                var buffer = Encoding.ASCII.GetBytes(data);
+                _socket.BeginSend(buffer, 0, buffer.Length, SocketFlags.None, SendCallback, buffer);
+            }
+            catch { Disconnected(this); }
+        }
+
+        void SendCallback(IAsyncResult ar)
+        {
+            _socket.EndSend(ar);
         }
     }
 }
