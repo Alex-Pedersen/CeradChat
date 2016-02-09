@@ -1,6 +1,6 @@
 ﻿namespace SimpleClient.ChatForms
 {
-    partial class loginChat
+    partial class LoginChat
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginChat));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginChat));
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNickname = new System.Windows.Forms.TextBox();
             this.connectButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxIP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -46,13 +46,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Chose a nickname";
             // 
-            // textBox1
+            // textBoxNickname
             // 
-            this.textBox1.Location = new System.Drawing.Point(51, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxNickname.Location = new System.Drawing.Point(51, 50);
+            this.textBoxNickname.Name = "textBoxNickname";
+            this.textBoxNickname.Size = new System.Drawing.Size(151, 20);
+            this.textBoxNickname.TabIndex = 2;
+            this.textBoxNickname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // connectButton
             // 
@@ -65,12 +65,12 @@
             this.connectButton.UseVisualStyleBackColor = true;
             this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
             // 
-            // textBox2
+            // textBoxIP
             // 
-            this.textBox2.Location = new System.Drawing.Point(51, 131);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 20);
-            this.textBox2.TabIndex = 5;
+            this.textBoxIP.Location = new System.Drawing.Point(51, 131);
+            this.textBoxIP.Name = "textBoxIP";
+            this.textBoxIP.Size = new System.Drawing.Size(151, 20);
+            this.textBoxIP.TabIndex = 5;
             // 
             // label1
             // 
@@ -88,13 +88,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(248, 240);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxIP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.connectButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNickname);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "loginChat";
+            this.Name = "LoginChat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chat Lobby";
             this.ResumeLayout(false);
@@ -104,9 +104,9 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxNickname;
         private System.Windows.Forms.Button connectButton;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxIP;
         private System.Windows.Forms.Label label1;
     }
 }
