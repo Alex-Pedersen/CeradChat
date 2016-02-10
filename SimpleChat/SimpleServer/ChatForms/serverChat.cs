@@ -2,9 +2,9 @@
 
 namespace SimpleServer
 {
-    public partial class serverChat : Form
+    public partial class ServerChat : Form
     {
-        public serverChat()
+        public ServerChat()
         {
             InitializeComponent();
         }

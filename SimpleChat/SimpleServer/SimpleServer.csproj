@@ -53,19 +53,19 @@
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Listener.cs" />
-    <Compile Include="ChatForms\privateChat.cs">
+    <Compile Include="ChatForms\privateChatServer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChatForms\privateChat.Designer.cs">
-      <DependentUpon>privateChat.cs</DependentUpon>
+    <Compile Include="ChatForms\privateChatServer.Designer.cs">
+      <DependentUpon>privateChatServer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ChatForms\serverChat.resx">
       <DependentUpon>serverChat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChatForms\privateChat.resx">
-      <DependentUpon>privateChat.cs</DependentUpon>
+    <EmbeddedResource Include="ChatForms\privateChatServer.resx">
+      <DependentUpon>privateChatServer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -2,9 +2,9 @@
 
 namespace SimpleClient.ChatForms
 {
-    public partial class privateChat : Form
+    public partial class PrivateChat : Form
     {
-        public privateChat()
+        public PrivateChat()
         {
             InitializeComponent();
         }
