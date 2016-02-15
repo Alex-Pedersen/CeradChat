@@ -48,10 +48,7 @@ namespace SimpleServer
             try
             {
                 var socketVariable = _socket.EndAccept(asyncResult);
-                if (SocketAccepted != null)
-                {
-                    SocketAccepted(socketVariable);
-                }
+                SocketAccepted?.Invoke(socketVariable);
             }
             catch (Exception exception)
             {

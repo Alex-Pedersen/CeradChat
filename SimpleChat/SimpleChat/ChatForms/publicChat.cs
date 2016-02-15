@@ -7,7 +7,7 @@ namespace SimpleClient.ChatForms
     {
         public PublicChat()
         {
-            _pChat = new privateChat(this);
+            _pChat = new PrivateChat(this);
             InitializeComponent();
         }
 
@@ -16,9 +16,9 @@ namespace SimpleClient.ChatForms
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            LoginChat.ClientSettings.Received += _client_Received;
-            LoginChat.ClientSettings.Disconnected += Client_Disconnected;
-            Text = "TCP Chat - " + LoginChat.txtIP.Text + " - (Connected as: " + LoginChat.txtNickname.Text + ")";
+            LoginChat.clientSettings.Received += _client_Received;
+            LoginChat.clientSettings.Disconnected += Client_Disconnected;
+            Text = "TCP Chat - " + LoginChat.textBoxIP.Text + " - (Connected as: " + LoginChat.textBoxNickname.Text + ")";
             LoginChat.ShowDialog();
         }
 
@@ -27,7 +27,7 @@ namespace SimpleClient.ChatForms
 
         }
 
-        private readonly privateChat _pChat;
+        private readonly PrivateChat _pChat;
 
         public void _client_Received(ClientSettings cs, string received)
         {
@@ -62,8 +62,8 @@ namespace SimpleClient.ChatForms
                 case "Chat":
                     this.Invoke(() =>
                     {
-                        _pChat.Text = _pChat.Text.Replace("user", LoginChat.txtNickname.Text);
-                        _pChat.Text = _pChat.Text.Replace("user", LoginChat.)
+                        _pChat.Text = _pChat.Text.Replace("user", LoginChat.textBoxIP.Text);
+                        _pChat.Text = _pChat.Text.Replace("user", LoginChat.textBoxNickname.Text);
                         _pChat.Show();
                     });
                     break;
@@ -83,8 +83,8 @@ namespace SimpleClient.ChatForms
         {
             if (textBoxMessage.Text != string.Empty)
             {
-                LoginChat.Client.Send("Message|" + LoginChat.txtNickname.Text + "|" + textBoxMessage.Text);
-                textBoxChat.Text += LoginChat.txtNickname.Text + " says: " + textBoxMessage.Text + "\r\n";
+                LoginChat.clientSettings.Send("Message|" + LoginChat.textBoxIP.Text + "|" + textBoxMessage.Text);
+                textBoxChat.Text += LoginChat.textBoxIP.Text + " says: " + textBoxMessage.Text + "\r\n";
                 textBoxMessage.Text = string.Empty;
             }
         }
@@ -93,7 +93,7 @@ namespace SimpleClient.ChatForms
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnSend.PerformClick();
+                buttonSend.PerformClick();
             }
         }
 
@@ -104,7 +104,7 @@ namespace SimpleClient.ChatForms
 
         private void privateChat_Click(object sender, EventArgs e)
         {
-            LoginChat.Client.Send("pChat|" + LoginChat.txtNickname.Text);
+            LoginChat.clientSettings.Send("pChat|" + LoginChat.textBoxIP.Text);
         }
     }
 }

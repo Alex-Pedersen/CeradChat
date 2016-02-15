@@ -1,6 +1,6 @@
 ﻿namespace SimpleClient.ChatForms
 {
-    partial class privateChat
+    partial class PrivateChat
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(privateChat));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrivateChat));
             this.buttonSend = new System.Windows.Forms.Button();
             this.textBoxMessage = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxChat = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonSend
@@ -54,15 +54,15 @@
             this.textBoxMessage.Size = new System.Drawing.Size(359, 42);
             this.textBoxMessage.TabIndex = 6;
             // 
-            // textBox1
+            // textBoxChat
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(472, 398);
-            this.textBox1.TabIndex = 5;
+            this.textBoxChat.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxChat.Location = new System.Drawing.Point(12, 12);
+            this.textBoxChat.Multiline = true;
+            this.textBoxChat.Name = "textBoxChat";
+            this.textBoxChat.ReadOnly = true;
+            this.textBoxChat.Size = new System.Drawing.Size(472, 398);
+            this.textBoxChat.TabIndex = 5;
             // 
             // privateChat
             // 
@@ -71,7 +71,7 @@
             this.ClientSize = new System.Drawing.Size(497, 470);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.textBoxMessage);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxChat);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "privateChat";
             this.Text = "TCP Private Chat";
@@ -84,6 +84,6 @@
 
         private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.TextBox textBoxMessage;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBoxChat;
     }
 }

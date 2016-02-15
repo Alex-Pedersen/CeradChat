@@ -58,6 +58,7 @@
             this.textBoxChat.ReadOnly = true;
             this.textBoxChat.Size = new System.Drawing.Size(472, 398);
             this.textBoxChat.TabIndex = 2;
+            this.textBoxChat.TextChanged += new System.EventHandler(this.txtReceive_TextChanged);
             // 
             // textBoxMessage
             // 
@@ -67,6 +68,7 @@
             this.textBoxMessage.Name = "textBoxMessage";
             this.textBoxMessage.Size = new System.Drawing.Size(359, 42);
             this.textBoxMessage.TabIndex = 3;
+            this.textBoxMessage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyDown);
             // 
             // buttonSend
             // 
@@ -77,6 +79,7 @@
             this.buttonSend.TabIndex = 4;
             this.buttonSend.Text = "Send";
             this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // contextMenuStrip1
             // 
@@ -84,12 +87,14 @@
             this.privateChatToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(139, 26);
+            this.contextMenuStrip1.Click += new System.EventHandler(this.privateChat_Click);
             // 
             // privateChatToolStripMenuItem
             // 
             this.privateChatToolStripMenuItem.Name = "privateChatToolStripMenuItem";
             this.privateChatToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.privateChatToolStripMenuItem.Text = "Private Chat";
+            this.privateChatToolStripMenuItem.Click += new System.EventHandler(this.privateChat_Click);
             // 
             // PublicChat
             // 
@@ -103,7 +108,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PublicChat";
             this.Text = "TCP Chat - Ip";
-            this.Load += new System.EventHandler(this.publicChat_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -112,8 +116,8 @@
 
         #endregion
         private System.Windows.Forms.ListBox userList;
-        private System.Windows.Forms.TextBox textBoxChat;
-        private System.Windows.Forms.TextBox textBoxMessage;
+        public System.Windows.Forms.TextBox textBoxChat;
+        public System.Windows.Forms.TextBox textBoxMessage;
         private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem privateChatToolStripMenuItem;

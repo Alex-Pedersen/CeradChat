@@ -52,7 +52,6 @@
             this.textBoxNickname.Name = "textBoxNickname";
             this.textBoxNickname.Size = new System.Drawing.Size(151, 20);
             this.textBoxNickname.TabIndex = 2;
-            this.textBoxNickname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // connectButton
             // 
@@ -104,9 +103,9 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxNickname;
+        public System.Windows.Forms.TextBox textBoxNickname;
         private System.Windows.Forms.Button connectButton;
-        private System.Windows.Forms.TextBox textBoxIP;
+        public System.Windows.Forms.TextBox textBoxIP;
         private System.Windows.Forms.Label label1;
     }
 }

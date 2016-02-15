@@ -2,14 +2,14 @@
 
 namespace SimpleClient.ChatForms
 {
-    public partial class privateChat : Form
+    public partial class PrivateChat : Form
     {
-        public PublicChat pChat;
+        public PublicChat PChat;
 
-        public privateChat(PublicChat publicChat)
+        public PrivateChat(PublicChat publicChat)
         {
             InitializeComponent();
-            pChat = publicChat;
+            PChat = publicChat;
         }
 
         private void buttonSend_Click(object sender, System.EventArgs e)
@@ -17,7 +17,9 @@ namespace SimpleClient.ChatForms
             if (textBoxMessage.Text != string.Empty)
             {
                 string user = Text.Split('-')[1];
-                pChat.formlogin
+                PChat.LoginChat.clientSettings.Send("User : " + user + "Message : " + textBoxMessage.Text);
+                textBoxChat.Text += user + "Says : " + textBoxMessage.Text + "\r\n";
+                textBoxMessage.Text = string.Empty;
             }
         }
     }

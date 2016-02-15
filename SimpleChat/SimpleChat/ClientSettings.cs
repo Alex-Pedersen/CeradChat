@@ -16,7 +16,7 @@ namespace SimpleClient
 
         public bool connected { get; private set; }
 
-        public ClientSettings(Socket socket)
+        public ClientSettings()
         {
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
