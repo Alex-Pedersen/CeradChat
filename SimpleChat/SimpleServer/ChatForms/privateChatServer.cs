@@ -7,21 +7,21 @@ namespace SimpleServer.ChatForms
     {
         private readonly ServerChat serverChat;
 
-        public PrivateChat()
+        public PrivateChat(ServerChat server)
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            if (textBox2.Text != string.Empty)
+            if (textBoxInput.Text != string.Empty)
             {
-                foreach (var client in from ListViewItem item in serverChat.listView1.SelectedItems select (Client) item.Tag)
+                foreach (var client in from ListViewItem item in serverChat.clientList.SelectedItems select (Client) item.Tag)
                 {
-                   client.Send("Personal Message : " + textBox2.Text);
+                   client.Send("Personal Message : " + textBoxInput.Text);
                 }
-                textBox1.Text += "Server says : " + textBox2.Text + "\r\n";
-                textBox2.Text = string.Empty;
+                textBoxReceive.Text += "Server says : " + textBoxInput.Text + "\r\n";
+                textBoxInput.Text = string.Empty;
             }
         }
 
@@ -35,7 +35,7 @@ namespace SimpleServer.ChatForms
 
         private void textBox1_TextChanged(object sender, System.EventArgs e)
         {
-            textBox1.SelectionStart = textBox1.TextLength;
+            textBoxReceive.SelectionStart = textBoxReceive.TextLength;
         }
     }
 }
