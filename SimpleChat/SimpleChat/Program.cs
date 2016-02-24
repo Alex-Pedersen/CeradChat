@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using SimpleClient.ChatForms;
 
 namespace SimpleClient
 {
@@ -13,7 +14,7 @@ namespace SimpleClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SplashForm.SplashForm());
+            Application.Run(new LoginChat());
         }
 
         public static void Invoke(this Control control, Action action)

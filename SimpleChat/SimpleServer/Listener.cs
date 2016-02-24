@@ -15,7 +15,7 @@ namespace SimpleServer
 
         public Listener(int port)
         {
-            this.Port = port;
+            Port = port;
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
 
@@ -48,7 +48,10 @@ namespace SimpleServer
             try
             {
                 var socketVariable = _socket.EndAccept(asyncResult);
-                SocketAccepted?.Invoke(socketVariable);
+                if (SocketAccepted != null)
+                {
+                    SocketAccepted(socketVariable);
+                }
                 _socket.BeginAccept(Callback, null);
             }
             catch (Exception exception)

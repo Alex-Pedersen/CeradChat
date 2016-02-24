@@ -16,8 +16,8 @@ namespace SimpleClient.ChatForms
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            LoginChat.clientSettings.Received += _client_Received;
-            LoginChat.clientSettings.Disconnected += Client_Disconnected;
+            LoginChat.ClientSettings.Received += _client_Received;
+            LoginChat.ClientSettings.Disconnected += Client_Disconnected;
             Text = "TCP Chat - " + LoginChat.textBoxIP.Text + " - (Connected as: " + LoginChat.textBoxNickname.Text + ")";
             LoginChat.ShowDialog();
         }
@@ -83,7 +83,7 @@ namespace SimpleClient.ChatForms
         {
             if (textBoxMessage.Text != string.Empty)
             {
-                LoginChat.clientSettings.Send("Message|" + LoginChat.textBoxIP.Text + "|" + textBoxMessage.Text);
+                LoginChat.ClientSettings.Send("Message|" + LoginChat.textBoxIP.Text + "|" + textBoxMessage.Text);
                 textBoxChat.Text += LoginChat.textBoxIP.Text + " says: " + textBoxMessage.Text + "\r\n";
                 textBoxMessage.Text = string.Empty;
             }
@@ -104,7 +104,7 @@ namespace SimpleClient.ChatForms
 
         private void privateChat_Click(object sender, EventArgs e)
         {
-            LoginChat.clientSettings.Send("pChat|" + LoginChat.textBoxIP.Text);
+            LoginChat.ClientSettings.Send("pChat|" + LoginChat.textBoxIP.Text);
         }
     }
 }

@@ -24,12 +24,12 @@ namespace SimpleClient.SplashForm
         {
             _tmr.Stop(); //after 3 sec stop the timer
             Hide(); //Hides displayform
-            var lobby = new LoginChat();
-            var chatpublic = new PublicChat();
-            var serverChat = new ServerChat();
-            lobby.Show();
-            chatpublic.Show();
-            serverChat.Show();
+            //var lobby = new LoginChat();
+            //var chatpublic = new PublicChat();
+            //var serverChat = new ServerChat();
+            //lobby.Show();
+            //chatpublic.Show();
+            //serverChat.Show();
         }
 
 

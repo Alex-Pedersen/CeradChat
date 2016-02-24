@@ -63,8 +63,9 @@
             this.textBoxChat.ReadOnly = true;
             this.textBoxChat.Size = new System.Drawing.Size(472, 398);
             this.textBoxChat.TabIndex = 5;
+            this.textBoxChat.TextChanged += new System.EventHandler(this.textBoxChat_TextChanged);
             // 
-            // privateChat
+            // PrivateChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,8 +74,9 @@
             this.Controls.Add(this.textBoxMessage);
             this.Controls.Add(this.textBoxChat);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "privateChat";
+            this.Name = "PrivateChat";
             this.Text = "TCP Private Chat";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PrivateChat_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
