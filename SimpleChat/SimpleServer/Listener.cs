@@ -56,7 +56,7 @@ namespace SimpleServer
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show("Message 3 : " + exception.Message);
             }
         }
     }

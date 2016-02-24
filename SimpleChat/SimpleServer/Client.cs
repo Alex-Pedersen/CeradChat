@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SimpleServer
 {
@@ -27,7 +28,7 @@ namespace SimpleServer
             _socket.BeginReceive(new byte[] {0}, 0, 0, 0, Callback, null);
         }
 
-        public void Callback(IAsyncResult ar)
+        void Callback(IAsyncResult ar)
         {
             try
             {
@@ -44,8 +45,9 @@ namespace SimpleServer
                 }
                 _socket.BeginReceive(new byte[] {0}, 0, 0, 0, Callback, null);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                MessageBox.Show("Message four : " + e.Message);
                 Close();
                 if (Disconnected != null)
                 {

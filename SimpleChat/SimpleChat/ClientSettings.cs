@@ -36,7 +36,7 @@ namespace SimpleClient
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show("Message two : " + exception.Message);
             }
         }
 

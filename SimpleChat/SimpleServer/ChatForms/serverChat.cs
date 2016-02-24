@@ -24,16 +24,16 @@ namespace SimpleServer.ChatForms
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
+                    MessageBox.Show("Message one : " + e.Message);
                 }
             }
         } 
 
         public ServerChat()
         {
-            _pChat = new PrivateChat(this);
             InitializeComponent();
-            _listener = new Listener(2014);
+            _pChat = new PrivateChat(this);
+            _listener = new Listener(2016);
             _listener.SocketAccepted += ListenerSocketAccept;
         }
 
@@ -41,10 +41,10 @@ namespace SimpleServer.ChatForms
         {
             var client = new Client(socket);
             client.Received += ClientReceived;
-            client.Disconnected += clientDisconnected;
+            client.Disconnected += ClientDisconnected;
             this.Invoke(() =>
             {
-                string ip = client.IpEndPoint.ToString().Split(':')[0];
+                var ip = client.IpEndPoint.ToString().Split(':')[0];
                 var item = new ListViewItem(ip); // ip
                 item.SubItems.Add(" "); // nickname
                 item.SubItems.Add(" "); // status
@@ -54,14 +54,14 @@ namespace SimpleServer.ChatForms
             });
         }
 
-        private void clientDisconnected(Client senderClient)
+        private void ClientDisconnected(Client senderClient)
         {
             this.Invoke(() =>
             {
                 for (int i = 0; i < clientList.Items.Count; i++)
                 {
                     var client = clientList.Items[i].Tag as Client;
-                    if (client.IpEndPoint == senderClient.IpEndPoint)
+                    if (client != null && Equals(client.IpEndPoint, senderClient.IpEndPoint))
                     {
                         textBoxReceive.Text += "<< " + clientList.Items[i].SubItems[1].Text + " has left the room >>\r\n";
                         BroadcastData("RefreshChat|" + textBoxReceive.Text);
@@ -75,7 +75,7 @@ namespace SimpleServer.ChatForms
         {
             this.Invoke(() =>
             {
-                for (int i = 0; i < clientList.Items.Count; i++)
+                for (var i = 0; i < clientList.Items.Count; i++)
                 {
                     var client = clientList.Items[i].Tag as Client;
                     if (client == null || !Equals(client.IpEndPoint, senderClient.IpEndPoint)) continue;
@@ -86,8 +86,8 @@ namespace SimpleServer.ChatForms
                             textBoxReceive.Text += "<< " + command[1] + " joined the room >>\r\n";
                             clientList.Items[i].SubItems[1].Text = command[1]; // nickname
                             clientList.Items[i].SubItems[2].Text = command[2]; // status
-                            string users = string.Empty;
-                            for (int j = 0; j < clientList.Items.Count; j++)
+                            var users = string.Empty;
+                            for (var j = 0; j < clientList.Items.Count; j++)
                             {
                                 users += clientList.Items[j].SubItems[1].Text + "|";
                             }
@@ -140,7 +140,7 @@ namespace SimpleServer.ChatForms
             _listener.Start();
         }
 
-        private void ServerChat_FormClosing(object sender, FormClosingEventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
             _listener.Stop();

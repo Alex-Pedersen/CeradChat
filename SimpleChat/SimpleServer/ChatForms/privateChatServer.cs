@@ -10,6 +10,7 @@ namespace SimpleServer.ChatForms
         public PrivateChat(ServerChat server)
         {
             InitializeComponent();
+            serverChat = server;
         }
 
         private void button1_Click(object sender, System.EventArgs e)
