@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using SimpleClient.ChatForms;
-using SimpleServer;
-using SimpleServer.ChatForms;
 using Timer = System.Windows.Forms.Timer;
 
 namespace SimpleClient.SplashForm
